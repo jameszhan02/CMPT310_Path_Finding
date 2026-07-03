@@ -1,0 +1,23 @@
+Scenario: random_terrain
+Description: Random elevation map with scattered obstacles.
+Start: (0, 0)
+Goal: (24, 24)
+
+BFS Results
+------------------------------
+Path found: True
+Path length: 48
+Nodes explored: 552
+Runtime: 0.000789 seconds
+Weighted path cost: 130.13
+Elevation gain: 41.19
+
+DFS Results
+------------------------------
+Path found: True
+Path length: 192
+Nodes explored: 303
+Runtime: 0.000248 seconds
+Weighted path cost: 510.81
+Elevation gain: 159.53
+
