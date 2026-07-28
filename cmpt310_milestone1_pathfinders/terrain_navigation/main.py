@@ -3,7 +3,7 @@ import time
 
 from terrain_navigation.scenarios import get_scenario
 from terrain_navigation.graph import build_graph
-from terrain_navigation.search import bfs, dfs
+from terrain_navigation.search import bfs, dfs, ucs, greedy, astar
 from terrain_navigation.metrics import calculate_path_metrics
 
 
@@ -55,9 +55,9 @@ def save_results(output_dir, scenario, results):
 
 def main():
     # To test another map later, change to:
-    #scenario = get_scenario("flat_terrain")
+    scenario = get_scenario("flat_terrain")
     #scenario = get_scenario("mountain_barrier")
-    scenario = get_scenario("random_terrain")
+    #scenario = get_scenario("random_terrain")
 
     terrain = scenario["terrain"]
     obstacles = scenario["obstacles"]
@@ -82,15 +82,15 @@ def main():
     print(f"Start: {start}")
     print(f"Goal: {goal}")
 
-    bfs_result = run_algorithm(bfs, graph, terrain, start, goal)
-    dfs_result = run_algorithm(dfs, graph, terrain, start, goal)
+    algorithms = [bfs, dfs, ucs, greedy, astar]
+ 
+    results = []
+    for algorithm in algorithms:
+        result = run_algorithm(algorithm, graph, terrain, start, goal)
+        results.append(result)
+        print_results(result)
 
-    print_results(bfs_result)
-    print_results(dfs_result)
-
-
-
-    save_results(output_dir, scenario, [bfs_result, dfs_result])
+    save_results(output_dir, scenario, results)
 
     print("\nSaved outputs to:")
     print(output_dir)

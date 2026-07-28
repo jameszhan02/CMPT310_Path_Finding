@@ -1,0 +1,50 @@
+Scenario: mountain_barrier
+Description: A high mountain ridge creates costly elevation changes.
+Start: (4, 0)
+Goal: (20, 24)
+
+BFS Results
+------------------------------
+Path found: True
+Path length: 40
+Nodes explored: 615
+Runtime: 0.000201 seconds
+Weighted path cost: 70.24
+Elevation gain: 15.1
+
+DFS Results
+------------------------------
+Path found: True
+Path length: 296
+Nodes explored: 317
+Runtime: 0.000153 seconds
+Weighted path cost: 621.84
+Elevation gain: 162.9
+
+UCS Results
+------------------------------
+Path found: True
+Path length: 40
+Nodes explored: 610
+Runtime: 0.000546 seconds
+Weighted path cost: 65.2
+Elevation gain: 12.58
+
+Greedy Results
+------------------------------
+Path found: True
+Path length: 40
+Nodes explored: 41
+Runtime: 5.1e-05 seconds
+Weighted path cost: 72.88
+Elevation gain: 16.42
+
+A* Results
+------------------------------
+Path found: True
+Path length: 40
+Nodes explored: 521
+Runtime: 0.000572 seconds
+Weighted path cost: 65.2
+Elevation gain: 12.58
+
