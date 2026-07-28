@@ -8,7 +8,7 @@ BFS Results
 Path found: True
 Path length: 48
 Nodes explored: 625
-Runtime: 0.00025 seconds
+Runtime: 0.000191 seconds
 Weighted path cost: 48.0
 Elevation gain: 0
 
@@ -17,7 +17,7 @@ DFS Results
 Path found: True
 Path length: 336
 Nodes explored: 337
-Runtime: 0.000167 seconds
+Runtime: 0.000146 seconds
 Weighted path cost: 336.0
 Elevation gain: 0
 
@@ -26,7 +26,7 @@ UCS Results
 Path found: True
 Path length: 48
 Nodes explored: 625
-Runtime: 0.000507 seconds
+Runtime: 0.000463 seconds
 Weighted path cost: 48.0
 Elevation gain: 0
 
@@ -35,7 +35,7 @@ Greedy Results
 Path found: True
 Path length: 48
 Nodes explored: 49
-Runtime: 5.2e-05 seconds
+Runtime: 5.3e-05 seconds
 Weighted path cost: 48.0
 Elevation gain: 0
 
@@ -44,7 +44,7 @@ A* Results
 Path found: True
 Path length: 48
 Nodes explored: 625
-Runtime: 0.000584 seconds
+Runtime: 0.000549 seconds
 Weighted path cost: 48.0
 Elevation gain: 0
 

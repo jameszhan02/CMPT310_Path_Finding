@@ -5,6 +5,7 @@ from terrain_navigation.scenarios import get_scenario
 from terrain_navigation.graph import build_graph
 from terrain_navigation.search import bfs, dfs, ucs, greedy, astar
 from terrain_navigation.metrics import calculate_path_metrics
+from terrain_navigation.visualize import plot_all_paths, plot_comparison
 
 
 def run_algorithm(algorithm_function, graph, terrain, start, goal):
@@ -55,9 +56,9 @@ def save_results(output_dir, scenario, results):
 
 def main():
     # To test another map later, change to:
-    scenario = get_scenario("flat_terrain")
+    #scenario = get_scenario("flat_terrain")
     #scenario = get_scenario("mountain_barrier")
-    #scenario = get_scenario("random_terrain")
+    scenario = get_scenario("random_terrain")
 
     terrain = scenario["terrain"]
     obstacles = scenario["obstacles"]
@@ -91,6 +92,12 @@ def main():
         print_results(result)
 
     save_results(output_dir, scenario, results)
+
+    paths_figure = os.path.join(output_dir, "paths.png")
+    comparison_figure = os.path.join(output_dir, "comparison.png")
+ 
+    plot_all_paths(scenario, results, save_path=paths_figure)
+    plot_comparison(scenario, results, save_path=comparison_figure)
 
     print("\nSaved outputs to:")
     print(output_dir)
